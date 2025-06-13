@@ -4,8 +4,8 @@ from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.openapi.utils import get_openapi
 import fastf1
 import logging
-from api import sessions
-from api.health import router as health_router
+from app.api import sessions
+from app.api.health import router as health_router
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
