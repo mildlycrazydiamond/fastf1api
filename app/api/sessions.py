@@ -3,7 +3,7 @@ from typing import List, Optional
 import fastf1
 import pandas as pd
 import logging
-from models.schemas import SessionInfo, LapData, DriverStanding
+from app.models.schemas import SessionInfo, LapData, DriverStanding
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
