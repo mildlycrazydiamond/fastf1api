@@ -35,7 +35,7 @@ pip install -r requirements.txt
 4. **Run the server:**
 ```bash
 uvicorn app.main:app --reload
-```backend service for accessing Formula 1 data using the Fast F1 Python library.
+```
 
 5. **Access the API:**
 - API: http://localhost:8000
