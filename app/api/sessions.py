@@ -8,20 +8,6 @@ from app.models.schemas import SessionInfo, LapData, DriverStanding
 router = APIRouter()
 logger = logging.getLogger(__name__)
 
-# @app.get("/")
-# def read_root():
-#     """Root endpoint with API information"""
-#     return {
-#         "message": "F1 Data API",
-#         "version": "1.0.0",
-#         "endpoints": {
-#             "session_info": "/session/{year}/{gp}/{session_type}",
-#             "lap_times": "/session/{year}/{gp}/{session_type}/laps",
-#             "qualifying_results": "/session/{year}/{gp}/qualifying/results",
-#             "race_results": "/session/{year}/{gp}/race/results"
-#         }
-#     }
-
 @router.get("/session/{year}/{gp}/{session_type}", 
     response_model=SessionInfo,
     summary="Get Session Information",

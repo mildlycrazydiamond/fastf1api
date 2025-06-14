@@ -1,6 +1,26 @@
-# F1 Data API Backend
+# F1 Data API B### Local Development
 
-A FastAPI backend service for accessing Formula 1 data using the Fast F1 Python library.
+1. **Clone and setup:**
+```bash
+git clone https://github.com/yourusername/fastf1api.git
+cd fastf1api
+```
+
+2. **Create Python virtual environment:**
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+```
+
+3. **Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+4. **Run the server:**
+```bash
+uvicorn app.main:app --reload
+```backend service for accessing Formula 1 data using the Fast F1 Python library.
 
 ## Features
 
@@ -52,23 +72,23 @@ docker run -p 8000:8000 f1-api
 - `GET /health` - Health check
 
 ### Session Data
-- `GET /session/{year}/{gp}/{session_type}` - Basic session info
-- `GET /session/{year}/{gp}/{session_type}/laps` - Lap times (optional: `?driver=HAM`)
+- `GET /api/session/{year}/{gp}/{session_type}` - Basic session info
+- `GET /api/session/{year}/{gp}/{session_type}/laps` - Lap times (optional: `?driver=HAM`)
 
 ### Results
-- `GET /session/{year}/{gp}/qualifying/results` - Qualifying results
-- `GET /session/{year}/{gp}/race/results` - Race results
+- `GET /api/session/{year}/{gp}/qualifying/results` - Qualifying results
+- `GET /api/session/{year}/{gp}/race/results` - Race results
 
 ## Example Usage
 
 ### Get 2024 Monaco GP qualifying results:
 ```
-GET /session/2024/Monaco/qualifying/results
+GET /api/session/2024/Monaco/qualifying/results
 ```
 
 ### Get Hamilton's lap times from 2024 Monaco race:
 ```
-GET /session/2024/Monaco/race/laps?driver=HAM
+GET /api/session/2024/Monaco/race/laps?driver=HAM
 ```
 
 ## Parameters
@@ -91,7 +111,7 @@ GET /session/2024/Monaco/race/laps?driver=HAM
 ### Render
 1. Connect your GitHub repo
 2. Set build command: `pip install -r requirements.txt`
-3. Set start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+3. Set start command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
 
 ### Heroku
 ```bash
@@ -144,3 +164,30 @@ const results = await response.json();
 ## License
 
 This project is open source. Fast F1 library is also open source under Apache 2.0 license.
+
+### Project Structure
+
+```
+fastf1api/
+├── app/                    # Main application package
+│   ├── __init__.py
+│   ├── main.py            # FastAPI application instance
+│   ├── api/               # API routes
+│   │   ├── __init__.py
+│   │   ├── health.py      # Health check endpoint
+│   │   └── sessions.py    # F1 session endpoints
+│   └── models/            # Data models
+│       ├── __init__.py
+│       └── schemas.py     # Pydantic models
+├── cache/                 # FastF1 cache directory
+├── requirements.txt       # Project dependencies
+├── Dockerfile            # Docker configuration
+└── README.md            # Project documentation
+```
+
+### API Documentation
+
+Once the server is running, you can access:
+- Swagger UI documentation at: http://localhost:8000/docs
+- ReDoc documentation at: http://localhost:8000/redoc
+- OpenAPI JSON at: http://localhost:8000/openapi.json
