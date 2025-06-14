@@ -37,37 +37,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```backend service for accessing Formula 1 data using the Fast F1 Python library.
 
-## Features
-
-- 🏎️ Access to F1 session data, lap times, and results
-- 📊 Qualifying and race results
-- 🚀 Fast API with automatic documentation
-- 🔄 CORS enabled for mobile app integration
-- 📱 RESTful API design
-- 🐳 Docker support for easy deployment
-
-## Quick Start
-
-### Local Development
-
-1. **Clone and setup:**
-```bash
-mkdir f1-api-backend
-cd f1-api-backend
-# Copy the main.py and requirements.txt files here
-```
-
-2. **Install dependencies:**
-```bash
-pip install -r requirements.txt
-```
-
-3. **Run the server:**
-```bash
-uvicorn main:app --reload
-```
-
-4. **Access the API:**
+5. **Access the API:**
 - API: http://localhost:8000
 - Interactive docs: http://localhost:8000/docs
 - Alternative docs: http://localhost:8000/redoc
