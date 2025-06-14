@@ -1,4 +1,19 @@
-# F1 Data API B### Local Development
+# F1 Data API 
+
+A FastAPI backend service for accessing Formula 1 data using the Fast F1 Python library.
+
+## Features
+
+- 🏎️ Access to F1 session data, lap times, and results
+- 📊 Qualifying and race results
+- 🚀 Fast API with automatic documentation
+- 🔄 CORS enabled for mobile app integration
+- 📱 RESTful API design
+- 🐳 Docker support for easy deployment
+
+## Quick Start
+
+### Local Development
 
 1. **Clone and setup:**
 ```bash
